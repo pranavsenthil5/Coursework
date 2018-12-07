@@ -2,7 +2,7 @@ import java.util.*;
 public class TreeCustom 
 {   
     TreeCustomNode root=null;
-    static int w,h;
+    static int w,h,hInc;
     
     ArrayList <Integer> xVal= new ArrayList<Integer>();
     ArrayList <Integer> yVal= new ArrayList<Integer>();
@@ -12,10 +12,21 @@ public class TreeCustom
         
     }
     
-    public TreeCustom(int w,int h)
+    ArrayList<Integer> getX()
+    {
+        return xVal;
+    }
+    
+    ArrayList<Integer> getY()
+    {
+        return yVal;
+    }
+    
+    public TreeCustom(int w,int h, int hInc)
     {
         this.w=w;
         this.h=h;
+        this.hInc=hInc;
     }
     
     void insert(int data)
@@ -39,17 +50,22 @@ public class TreeCustom
         }
         return root;
     }
+    
+    void setCoordinates()
+    {
+        Coordinate(root,w,h);
+    }
 
-    void printCoordinate(TreeCustomNode root,int x, int y){//Pass root, x and y value from  tre diplay
+    void Coordinate(TreeCustomNode root,int x, int y){
         if(root == null)
             return;
 
-        System.out.println(root.data +" : ("+x+","+y+")");
-        xVal.add(x);
+        System.out.println(root.data +" : ("+(x/2)+","+(y)+")");
+        xVal.add(x/2);
         yVal.add(y);
-        printCoordinate(root.left, x-1, y-1);//change the parameters here
-        printCoordinate(root.right, x+1,y-1);
-    }//after this function use getter to get the x and y values
+        Coordinate(root.left,x/2, y+hInc);
+        Coordinate(root.right, x+(x/2),y+hInc);
+    }
 
     void inorder()
     {
