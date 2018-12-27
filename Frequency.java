@@ -7,11 +7,11 @@ class Frequency
         System.out.println("Input:");
         String input = s.nextLine();
         String [] a = input.split(","); 
-        
+
         int[] array= new int[a.length];
         for(int i=0;i<a.length;i++)
-        array[i]=Integer.parseInt(a[i]);
-        
+            array[i]=Integer.parseInt(a[i]);
+
         array = Sort(array);
         int count=1;
         for(int i=0;i<array.length-1;i++)
@@ -35,7 +35,7 @@ class Frequency
             catch(Exception e)
             {
                 value[j]= array[i];
-                    j++;
+                j++;
             }
         }
 
@@ -54,16 +54,36 @@ class Frequency
                     int temp=freq[j];
                     freq[j]=freq[j+1];
                     freq[j+1]=temp;
-                    
-                     temp=value[j];
+
+                    temp=value[j];
                     value[j]=value[j+1];
-                     value[j+1]=temp;
+                    value[j+1]=temp;
                 }
             }
             j=0;
         }
-        int output= (count(freq,freq[0])==1) ? value[0]: value[value.length-1]; 
-        System.out.println(output);
+
+        boolean possible=false;
+        if(count==1)
+        {
+            System.out.println("Invalid");
+            System.exit(0);
+        }
+        for(int i=0;i<2;i++)
+        {
+            if(count(freq,freq[i])==freq.length-1)
+            {
+                possible=true;
+            }
+        }
+        
+        if(possible)
+        {
+            int output= (count(freq,freq[0])==1) ? value[0]: value[value.length-1]; 
+            System.out.println(output);
+        }
+        else
+            System.out.println("Invalid");
     }
     // }
     // boolean exists(int []array,int value)
