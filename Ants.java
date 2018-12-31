@@ -3,9 +3,16 @@ class Ants
 {
     public static void main(String []args)
     {
-        int a=3;
-        int b=3;
-        int t=2;
+        Scanner s = new Scanner(System.in);
+        System.out.print("A-");
+        int a=s.nextInt();
+        System.out.println();
+        System.out.print("B-");
+        int b=s.nextInt();
+        System.out.println();
+        System.out.print("T-");
+        int t=s.nextInt();
+        System.out.println();
         int[] array= new int[a+b];
         String input="";
         String a1="";
