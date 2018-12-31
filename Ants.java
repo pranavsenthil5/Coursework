@@ -61,6 +61,8 @@ class Ants
             }
         }
         display(array);
+        System.out.println();
+        display(output);
     }
 
     static void display(int []array)
@@ -70,5 +72,11 @@ class Ants
             System.out.print(i+" ");
         }        
     }
-
+    static void display(char []array)
+    {
+        for(char i:array)
+        {
+            System.out.print(i+" ");
+        }        
+    }
 }
