@@ -1,5 +1,5 @@
 import java.util.*;
-class Decode
+class Cryptography
 {
     public static void main(String []args)
     {
