@@ -85,16 +85,6 @@ class Frequency
         else
             System.out.println("Invalid");
     }
-    // }
-    // boolean exists(int []array,int value)
-    // {
-    // for(int i=0;i<array.length;i++)
-    // {
-    // if(array[i]==value)
-    // return true;
-    // }
-    // return false;
-    // }
 
     public static int count(int [] array,int value)
     {
