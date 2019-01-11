@@ -1,5 +1,5 @@
 import java.util.*;
-class UniquePrime
+class UniquePrime3
 {
     public static void main(String []args)
     {
@@ -8,7 +8,7 @@ class UniquePrime
         // int n=s.nextInt();
         int n=1;
         int l,u;
-        int array[][];
+        int array[];
         for(int i=0;i<n;i++)
         {
             // System.out.println("Input L:-");
@@ -17,7 +17,7 @@ class UniquePrime
             // u=s.nextInt();
             l=90;
             u=96;
-            array=new int[u-l+1][];
+            array=new int[u-l+1];
             for(int j=0;j<array.length;j++)
             {
                 int k=2;
@@ -60,32 +60,18 @@ class UniquePrime
         return false;
     }
 
-    public static int[] LCF(int x)
+    public static int LCF(int x,int i)
     {
-        int a[];
-        int count=0;
-        for(int i=2;i<x;i++)
+        for(;i<x;i++)
         {
             if(x%i==0)
             {
                 if(isPrime(i))
-                    count++;
+                    return i;
+
             }
         }
-        a=new int[count];
-        count=0;
-        for(int i=2;i<x;i++)
-        {
-            if(x%i==0)
-            {
-                if(isPrime(i))
-                {
-                    a[count]=i;
-                    count++;
-                }
-            }
-        }
-        return a;
+        return x;
     }
 
     public static boolean isPrime(int x)
