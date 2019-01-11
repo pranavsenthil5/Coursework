@@ -3,64 +3,95 @@ class UniquePrime
 {
     public static void main(String []args)
     {
-        Scanner s = new Scanner(System.in);
-        // System.out.println("Input N:-");
-        // int n=s.nextInt();
         int n=1;
         int l,u;
         int array[][];
-        for(int i=0;i<n;i++)
+
+        l=90;
+        u=96;
+        array=new int[u-l+1][u];
+        int[] c=new int[u-l+1];
+        int[] max=new int[u-l+1];
+        
+        for(int i=0;i<u-l+1;i++)
         {
-            // System.out.println("Input L:-");
-            // l=s.nextInt();
-            // System.out.println("Input U:-");
-            // u=s.nextInt();
-            l=90;
-            u=96;
-            array=new int[u-l+1][];
-            for(int j=0;j<array.length;j++)
+            c[i]=0;
+            array[i]=PF(l+i);
+            max[i]=array[i].length;
+        }
+        
+        for(int i=0;i<array.length;i++)
+        {
+            for(int j=0;j<array[i].length;j++)
             {
-                int k=2;
-
-                int n1=LCF(l+j,k);
-                if(!contains(array,n1))
-                    array[j]=LCF(l+j,k);
-                else
+                System.out.print(array[i][j]+" ");
+            }    
+            System.out.println("");
+        }
+        
+        
+        
+        while(true)
+        {
+            int[] output=new int[u-l+1];
+            for(int i=0;i<u-l+1;i++)
+            {
+                output[i]=array[i][c[i]];
+            }
+            
+            if(isUnique(output))
+            {
+                for(int k:output)
                 {
-                    do
-                    {
-                        k=n1+1;
-                        n1=LCF(l+j,k);
-                        if(!contains(array,k))
-                        {
-                            array[j]=LCF(l+j,k);
-                            break;
-                        }
-
-                    }
-                    while(true);
+                    System.out.print(k+" ");
                 }
-                //Finished until getting prime no. for all values...next time check if they are equall
+                break;
             }
-
-            for(int j:array)
-            {
-                System.out.print(j+" ");
-            }
+            
+            
         }
     }
-
-    public static boolean contains(int[] x,int y)
+    
+    public static int[] next(int[] x, int[]y)
+    {
+        for(int i=x.length-1;i>=0;i--)
+        {
+            x[i]++;
+            if(x[i]>=y[i])
+            {
+                x[i]=0;
+                x[i-1]++;
+            }
+            
+        }
+        
+        return x;
+    }
+    
+    public static boolean isUnique(int []x)
     {
         for(int i=0;i<x.length;i++)
         {
-            if(x[i]==y)
-                return true;
+            if(ncount(x,x[i])!=1)
+            return false;
         }
-        return false;
+        return true;
     }
-
-    public static int[] LCF(int x)
+    
+    public static int ncount(int [] array,int value)//returns the count 
+    {
+        int count =0;
+        for(int i=0;i<array.length;i++)
+        {
+            if(array[i]==value)
+            {
+                count ++;
+            }
+        }
+        return count;
+    }
+    
+    public static int[] PF(int x)
     {
         int a[];
         int count=0;
