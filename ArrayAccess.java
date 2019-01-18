@@ -4,7 +4,15 @@ class ArrayAccess
     public static void main(String []args)
     {
         Scanner s = new Scanner(System.in);
-        int []array={1,5,3,4,2};
+        System.out.println("Input the no. of elements in the array");
+        
+        int []array=new int[s.nextInt()];
+        
+        for(int i=0;i<array.length;i++)
+        {
+            System.out.println("Enter value of element "+i+":");
+            array[i]=s.nextInt();
+        }
         System.out.println("Input 1 or 2:\n1-Sort\n2-Search");
         int choice1 =s.nextInt();
         int choice2;
@@ -29,6 +37,37 @@ class ArrayAccess
                 break;
             }
         }
+        else if(choice1==2)
+        {
+            System.out.println("Input 1,2 or 3:\n1-Linear Search\n2-Binary Search");
+            choice2=s.nextInt();
+            boolean present=false;
+            System.out.println("Input Search Element:");
+            int key=s.nextInt();
+            switch(choice2)
+            {
+                case 1:
+                present=Linear(array,key);
+                Display(array);
+                break;
+                case 2:
+                present=Binary(array,key);
+                Display(array);
+                break;
+            }
+            if(present)
+            {
+                System.out.println("Found");
+            }
+            else
+            {
+                System.out.println("Not Found");
+            }
+        }
+        else
+        {
+            System.out.println("Wrong Input");
+        }
     }
 
     public static int[] Bubble(int []x)
@@ -50,7 +89,6 @@ class ArrayAccess
 
     public static int[] Selection(int []x)
     {
-
         for (int i = 0; i < x.length-1; i++) 
         { 
             int l = i; 
@@ -71,26 +109,61 @@ class ArrayAccess
     public static int[] Insertion(int []x)
     {
         int i, key, j; 
-        for (i = 1; i < n; i++) 
+        for (i = 1; i < x.length; i++) 
         { 
-            key = arr[i]; 
+            key = x[i]; 
             j = i-1; 
 
-            /* Move elements of arr[0..i-1], that are 
-            greater than key, to one position ahead 
-            of their current position */
-            while (j >= 0 && arr[j] > key) 
+            while (j >= 0 && x[j] > key) 
             { 
-                arr[j+1] = arr[j]; 
+                x[j+1] = x[j]; 
                 j = j-1; 
             } 
-            arr[j+1] = key; 
+            x[j+1] = key; 
         } 
         return x;
     }
 
-    public static int[] Display(int []x)
+    public static boolean Linear(int []x,int y)
     {
-        return x;
+        for(int i=0;i<x.length;i++)
+        {
+            if(x[i]==y)
+                return true;
+        }
+        return false;
+    }
+
+    public static boolean Binary(int []x,int y)
+    {
+        x=Bubble(x);
+
+        int l = 0;
+        int u = x.length  - 1;
+        int m = (l + u)/2;
+
+        while( l <= u )
+        {
+            if ( x[m] < y )
+                l = m + 1;
+            else if ( x[m] == y )
+            {
+                return true;
+            }
+            else
+            {
+                u = m - 1;
+            }
+            m = (l + u)/2;
+        }
+        return false;
+    }
+
+    public static void Display(int []x)
+    {
+        for(int i=0;i<x.length;i++)
+        {
+            System.out.print(x[i]+" ");
+        }
     }
 }
