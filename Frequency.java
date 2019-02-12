@@ -86,7 +86,7 @@ class Frequency
             System.out.println("Invalid");
     }
 
-    public static int count(int [] array,int value)
+    public static int count(int [] array,int value)//returns the count of a certain number in an array.
     {
         int count =0;
         for(int i=0;i<array.length;i++)
@@ -99,7 +99,7 @@ class Frequency
         return count;
     }
 
-    public static int[] Sort(int []array)
+    public static int[] Sort(int []array)//Sorts the array
     {
 
         for(int i=0;i<array.length;i++)

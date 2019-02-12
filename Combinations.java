@@ -1,19 +1,34 @@
 import java.util.*;
 class Combinations
+/**Get input first.
+ * This program outputs all poossible combinations and permutations of numbers in alphabetical order, for whom the sum of digits , is equal to the input.
+ * For eample 6. 
+ * OUTPUT-111111,11112,1113..and so on
+ * 
+ * Working:-
+ * Maximum no, always has everything as one, For example 7-1111111,9-111111111
+ * I iterate through a loop, starting from 1 to the maximum number.
+ * I add the i to the array only if it's sum is the input number.
+ * I then trim the arry
+ * Then Sort
+ * and then Print
+ */
 {
     public static void main(String []args)
     {
-        int n=8;
+        Scanner s =new Scanner(System.in);
+        System.out.println("Input Number");
+        int n=s.nextInt();
         int max=(int)Math.pow(n,n);
         int[] array=new int[max];
         int j=0;
 
-        for(int i=1;i<=start(n,1);i++)
+        for(int i=1;i<=MaxValue(n,1);i++)
         {
             if(sumCheck(i,n))
             {
                 array[j]=i;
-                j++;
+                j++;//If the sum is correct, the value gets stored in the 'massive' array. So i remove the 0 elements later using convert function.
             }
         }
 
@@ -22,7 +37,7 @@ class Combinations
         display(array);
     }
 
-    static void display(int array[])
+    static void display(int array[])//Displays the contents of the array
     {
         for(int i=0;i<array.length;i++)
         {
@@ -30,7 +45,7 @@ class Combinations
         }
     }
 
-    static int start(int n,int x)
+    static int MaxValue(int n,int x)//Max Value  . For example, for 6 it is 111111
     {
         String s="";
         for(int i=0;i<n;i++)
@@ -41,7 +56,7 @@ class Combinations
 
     }
 
-    static boolean sumCheck(int input,int n)
+    static boolean sumCheck(int input,int n)//The input number should not contain any zero and the sum should be equal to the give no.
     {
         String s=""+input;
         int sum=0;
@@ -60,7 +75,7 @@ class Combinations
         return false;
     }
 
-    static int[] convert(int[] x)
+    static int[] convert(int[] x)//To get rid of the elements containing 0, For example- [11,2,0,0,0,0]
     {
         int count=0;
         for(int i=0;i<x.length;i++)
@@ -83,7 +98,7 @@ class Combinations
         return y;
     }
 
-    static int[] sort(int[] x)
+    static int[] sort(int[] x)//Sort them in alphabetical order
     {
         for(int i=0;i<x.length;i++)
         {
