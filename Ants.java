@@ -32,10 +32,10 @@ class Ants
 
         StringBuffer sb=new StringBuffer(a1);
         sb=sb.reverse();
-        input=sb.toString()+a2;
-        
+        input=sb.toString()+a2;//Using this to generate letters for the ants - CBA DEF
+
         char output[]=input.toCharArray();
-        for(int i=0;i<a+b;i++)
+        for(int i=0;i<a+b;i++)//Asigning 1 for A ants and 2 for B ants
         {
             if(i<a)
             {
@@ -51,25 +51,30 @@ class Ants
         {
             for(int j=0;j<a+b-1;j++)
             {
-                if((array[j]==1)&&(array[j+1]==2))
+
+                if((array[j]==1)&&(array[j+1]==2))//Every time any A ant on the left and the consecutive b ant on the right switch
                 {
-                    
+                    System.out.println("_________");
+                    display(output);
+                    System.out.println();
                     int it=array[j];
                     array[j]=array[j+1];
                     array[j+1]=it;
-                    
+
                     char ct=output[j];
                     output[j]=output[j+1];
                     output[j+1]=ct;
-                    j++;
-                    
-                    
+                    j++;//To avoid the ant, after the switch
+
                 }
             }
         }
+        System.out.println("##########");
         display(array);
         System.out.println();
         display(output);
+        System.out.println();
+        System.out.println("##########");
     }
 
     static void display(int []array)
@@ -79,6 +84,7 @@ class Ants
             System.out.print(i+" ");
         }        
     }
+
     static void display(char []array)
     {
         for(char i:array)

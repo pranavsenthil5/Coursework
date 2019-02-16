@@ -42,7 +42,7 @@ class GoT
         }
     }
 
-    public static boolean isOver(int [] array)
+    public static boolean isOver(int [] array)//I dont understand the logic of this....
     {
         int count =0;
 
