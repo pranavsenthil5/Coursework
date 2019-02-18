@@ -1,6 +1,17 @@
 import java.util.*;
 class GoT
 {
+    /**
+     * Get the number of turns t
+     * get no of players..
+     * give one t turns to each player.
+     * Whoever it finishes with, kick them out(I make them -1)
+     * Then again, turns. 
+     * Kick the las person out.
+     * After everytime u kick, check if the rest got equal turns. 
+     * if yes break
+     * if no repeat the process.
+     */
     public static void main(String []args)
     {
         Scanner s = new Scanner(System.in);
@@ -58,7 +69,7 @@ class GoT
         {
             if(array[i]!=1)
             {
-                if(ncount(array,array[i])+count==array.length)//checks if number of -1 and the count of the other number adds up to the arrays length
+                if(ncount(array,array[i])+count==array.length)//checks if the array has all same nos or -1; nothing else
                 {
                     return true;
                 }

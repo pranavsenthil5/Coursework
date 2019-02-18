@@ -15,6 +15,7 @@ class Cryptography
 
         if(option==2)
         {
+            /*
             String a[]=input.split(" ");
             input="";
             
@@ -22,7 +23,8 @@ class Cryptography
             {
                 input+=a[i];
             }
-
+            */
+           input=input.split(" ").toString();//If this step does not work, switch it with the above one.
             String output="";
             for(int i=0;i<input.length();i++)
             {

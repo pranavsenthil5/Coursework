@@ -1,6 +1,9 @@
 import java.util.*;
 class ArrayAccess
 {
+    /**
+     * Has all sorts and searches
+     */
     public static void main(String []args)
     {
         Scanner s = new Scanner(System.in);
