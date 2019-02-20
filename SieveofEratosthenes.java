@@ -1,6 +1,14 @@
 import java.util.*;
-class f
+class SieveofEratosthenes
 {
+    /**
+     * Get input
+     * iterate through the array and remove the multiples of that number[I make it -1] 
+     * stop when the square of the number in the array is greater than the input
+     * Display it
+     */
+    
+    
     public static void main(String []args)
     {
         Scanner s =new Scanner(System.in);
@@ -12,17 +20,14 @@ class f
             a[i]=i+2;
         }
 
-        for(int i=0;i<n-1;i++)
+        for(int i=0;i<=n/2;i++)
         {
+            if(a[i]*a[i]>n)
+            break;
             for(int j=a[i];j<n;j+=a[i])
             {
-                try{
-                    if(a[j+1]==-1)
-                        continue;}
-                catch(Exception e)
-                {
+                if(a[i]==-1)
                     break;
-                }
                 try
                 {
                     a[j+i]=-1;
@@ -31,9 +36,21 @@ class f
                 {
                     break;
                 }
-
             }
+
         }
-        System.out.println("");
+        display(a);
+        
+    }
+    
+    static void display(int x[])
+    {
+
+        for(int j=0;j<x.length;j++)
+        {
+            if(x[j]==-1)
+            continue;
+            System.out.print(x[j]+" ");
+        }
     }
 }
