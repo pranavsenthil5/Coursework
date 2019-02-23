@@ -1,6 +1,15 @@
 import java.util.*;
 class Ants
 {
+    /**
+     * Create 2 arrays, one for eachset of ants.
+     * Asign 1 to all the ants from one and 2 to all the ants from the other.
+     * Convert them to strings and join them(1111222)
+     * Iterate through the loop.
+     * If there is a 2 right after a 1, Switch the numbers.
+     * Keep swiching for t turns as per input
+     * Replace all numbers with letters and print
+     */
     public static void main(String []args)
     {
         Scanner s = new Scanner(System.in);

@@ -1,5 +1,11 @@
 import java.util.*;
 class Bipartite
+/**
+ * Get input;
+ * keep adding the input no. to itself
+ * Check if the number is bipartite- Has only 2 unique numbers
+ * If yes display the 2 nos and their count before each.
+ */
 {
     public static void main(String [] args)
     {

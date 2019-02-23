@@ -1,10 +1,10 @@
 import java.util.*;
 /**
- * To represent A fraction in the form of sum of unit fractions
+ * This program represents a fraction in the form of sum of unit fractions
  * For example 5/6, can be return as 1/2 + 1/3
- * To achieve this, i take a highest unit fraction that is less than the unput fraction
+ * To achieve this, i take a highest unit fraction that is less than the input fraction
  * That becomes my first denominator.
- * Next, what i do is, i find the difference and store it. I find the highest UF of this number and add it to the list of denominators
+ * Next, what i do is, i find the difference and store it and I find the highest UF of this number and add it to the list of denominators
  * I repeat until the difference is 0.
  * I print all the fractions using 1 as the numerator and the values in the list(Stored as a String)as the denominators
  */

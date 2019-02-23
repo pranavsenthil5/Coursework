@@ -1,6 +1,14 @@
 import java.util.*;
 class MatrixCustom 
 {
+    /**
+     * Create a 2d array;
+     * input all the values to a 1d array;
+     * sort the 1d array;
+     * 
+     * start asigning values from going left to right(along the 1st row).Then down(along the last column), Then right to left
+     * then up. When coming back to the same place go one step less. Kepp decreasing the number of steps.
+     */
     public static void main(String []args)
     {
         Scanner s = new Scanner (System.in);

@@ -6,9 +6,9 @@ class GoT
      * get no of players..
      * give one t turns to each player.
      * Whoever it finishes with, kick them out(I make them -1)
-     * Then again, turns. 
-     * Kick the las person out.
-     * After everytime u kick, check if the rest got equal turns. 
+     * Then again,t turns for eack player. 
+     * Kick the last person out.
+     * After everytime u kick, check if the rest have gotten equal number of  turns. 
      * if yes break
      * if no repeat the process.
      */
