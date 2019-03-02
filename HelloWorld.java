@@ -4,6 +4,8 @@ public class HelloWorld {
         System.out.println("Hello, World");
     }
 }
+
+//Total - 18
 /*
    16
  * Excel
@@ -22,4 +24,11 @@ public class HelloWorld {
  * Queue - WIP
  * Sieve of eratosthenes
  * Bipartite
+   */
+  
+  /*
+   2
+ * CheckMate
+ * Infix to Postfix
+ * 
    */

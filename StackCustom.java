@@ -2,12 +2,12 @@ class StackCustom
 {
     int size;
     int top;
-    int arr[];
+    char arr[];
     StackCustom(int input)
     {
         size=input;
         top=-1;
-        arr=new int[size];
+        arr=new char[size];
     }
     
     boolean isEmpty()
@@ -20,7 +20,7 @@ class StackCustom
         return top==(size-1);
     }
     
-    void push(int x)
+    void push(char x)
     {
         if(!isFull())
         {
@@ -32,7 +32,7 @@ class StackCustom
         }
     }
     
-    int pop()
+    char pop()
     {
         if(!isEmpty())
         {
@@ -42,11 +42,11 @@ class StackCustom
         {
             System.out.println("Stack Empty");
         }
-        return -1;
+        return 'E';
     }
     
-    void peek()
+    char peek()
     {
-        System.out.println("Top value is "+arr[top]);
+        return arr[top];
     }
 }
