@@ -7,7 +7,7 @@ public class HelloWorld {
 
 //Total - 18
 /*
-   16
+   17
  * Excel
  * Vampire
  * Fraction
@@ -21,14 +21,15 @@ public class HelloWorld {
  * Stack
  * Tree
  * Linked List
+ * Infix to Postfix
  * Queue - WIP
  * Sieve of eratosthenes
  * Bipartite
    */
   
   /*
-   2
+   1
  * CheckMate
- * Infix to Postfix
+ 
  * 
    */

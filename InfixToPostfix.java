@@ -1,5 +1,5 @@
 import java.util.*;
-class InfixConversion
+class InfixToPostfix
 {
     public static void main(String []args)
     {
@@ -9,8 +9,8 @@ class InfixConversion
         StackCustom stack = new StackCustom(input.length());
         
         String output="";
-        displayArray(stack.arr);
-        display(output);
+        //displayArray(stack.arr);
+        //display(output);
         for(int i=0;i<input.length();i++)
         {
             char c=input.charAt(i);
@@ -49,6 +49,12 @@ class InfixConversion
                 {
                     stack.push(c);
                 }
+                else if(priority(c)==priority(stack.peek()))
+                {
+                    char temp=stack.pop();
+                    output+=temp;
+                    stack.push(c);
+                }
                 else
                 {
                     output+=c;
@@ -59,7 +65,7 @@ class InfixConversion
             {
                 output+=c;
             }
-            displayArray(stack.arr);
+            //displayArray(stack.arr);
         }
         
         while(!stack.isEmpty())
@@ -67,7 +73,7 @@ class InfixConversion
             output+=stack.pop();
         }
         
-        System.out.println(output);
+        //System.out.println(output);
         display(output);
     }
     static boolean isOperator(char c)

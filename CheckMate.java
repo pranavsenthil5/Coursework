@@ -5,17 +5,17 @@ class CheckMate
     {
         Scanner s = new Scanner(System.in);
 
-        System.out.println("Input the x of K1:");
+        System.out.println("Input the x of Losing King:");
         int x1=Integer.parseInt(s.next());
-        System.out.println("Input the y of K1:");
+        System.out.println("Input the y of Losing King:");
         int y1=Integer.parseInt(s.next());
-        System.out.println("Input the x of Q1:");
+        System.out.println("Input the x of WinningQueen:");
         int x2=Integer.parseInt(s.next());
-        System.out.println("Input the y of Q1:");
+        System.out.println("Input the y of WinningQueen:");
         int y2=Integer.parseInt(s.next());
-        System.out.println("Input the x of K2:");
+        System.out.println("Input the x of Winning King:");
         int x3=Integer.parseInt(s.next());
-        System.out.println("Input the y of K2:");
+        System.out.println("Input the y of Winning King:");
         int y3=Integer.parseInt(s.next());
 
         int [][]board =new int[8][8];
