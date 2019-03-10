@@ -25,12 +25,12 @@ public class HelloWorld {
  * Queue - WIP
  * Sieve of eratosthenes
  * Bipartite
+ * Date Finder
    */
   
   /*
    2
  * CheckMate
  
- *Date Finder
  *Shortest Path
    */
