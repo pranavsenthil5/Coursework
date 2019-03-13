@@ -1,13 +1,12 @@
 import java.util.*;
 class ShortestPath
-//https://www.codechef.com/COZL2012/problems/RBX12R01
 {
     public static void main(String []args)
     {
         Scanner s = new Scanner(System.in);
         System.out.println("Input count:");
         int count=s.nextInt();
-        int anle=90;
+        int angle=90;
         for(int i=0;i<count;i++)
         {
             System.out.println("Enter Input for test case "+(i+1)+":");
@@ -20,22 +19,108 @@ class ShortestPath
 
             for(int j=0;j<letters.length();j++)
             {
-                direction+=inLetters(numbers.charAt(j),letters.charAt(j));
+                direction+=convert(numbers.charAt(j),letters.charAt(j));
+            }
+            
+            String universalDirection="";
+            
+            for(int k=0;k<direction.length();k++)
+            {
+                char d=direction.charAt(k);
+                if(d=='l')
+                {
+                    angle+=90;
+                }
+                else if(d=='r')
+                {
+                    angle-=90;
+                }
+                if(angle<0)
+                angle = 360+angle;
+                angle=angle%360;
+                if(angle==90)
+                universalDirection+="u";
+                else if(angle==180)
+                universalDirection+="l";
+                else if(angle==270)
+                universalDirection+="d";
+                else if(angle==0)
+                universalDirection+="r";
+                System.out.println(angle);
+            }
+            System.out.println(universalDirection);
+            System.out.println(getDirection(universalDirection));
+        }
+    }
+    
+    static String getDirection(String input)
+    {
+        int x=0,y=0;
+        for(int i=0;i<input.length();i++)
+        {
+            if(input.charAt(i)=='u')
+            {
+                y++;
+            }
+            else if(input.charAt(i)=='d')
+            {
+                y--;
+            }
+            else if(input.charAt(i)=='l')
+            {
+                x--;
+            }
+            else
+            {
+                x++;
             }
         }
-
-    }
-    
-    static String inletters(char x,char y)
-    {
-        String output="";
-        for(int i=0;i<Character.getNumericValue(x);i++)
+        
+        if(x==0 && y==0)
         {
-            output+=Character.toString(y);
+            return "Same Place";
         }
-        return output;
+        else if(x==0)
+        {
+            if(y>0)
+            {
+                return "N";
+            }
+            return "S";
+        }
+        else if(y==0)
+        {
+            if(x>0)
+            {
+                return "E";
+            }
+            return "W";
+        }
+        else if(y<0 && x<0)
+        {
+            return "SW";
+        }
+        else if(y>0 && x>0)
+        {
+            return "NE";
+        }
+        else if(y<0 && x>0)
+        {
+            return "SE";
+        }else 
+        {
+            return "NW";
+        }
     }
 
-    
+    static String convert(char a,char b)
+    {
+        String o="";
 
+        for(int i=0;i<Character.getNumericValue(a);i++)
+        {
+            o+=b;
+        }
+        return o;
+    }
 }
