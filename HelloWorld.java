@@ -5,9 +5,8 @@ public class HelloWorld {
     }
 }
 
-//Total - 18
 /*
-   17
+   19
  * Excel
  * Vampire
  * Fraction
@@ -26,11 +25,6 @@ public class HelloWorld {
  * Sieve of eratosthenes
  * Bipartite
  * Date Finder
+ * Cows and Bulls
    */
   
-  /*
-   2
- * CheckMate
- 
- *Shortest Path
-   */

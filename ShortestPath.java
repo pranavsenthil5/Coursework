@@ -7,23 +7,35 @@ class ShortestPath
         Scanner s = new Scanner(System.in);
         System.out.println("Input count:");
         int count=s.nextInt();
+        int anle=90;
         for(int i=0;i<count;i++)
         {
             System.out.println("Enter Input for test case "+(i+1)+":");
             s.nextLine();
-            char arr[]=s.nextLine().toUpperCase().replaceAll(" ","").toCharArray();
-            int num[]=new int[arr.length/2];
-            char direction[]=new char[arr.length/2];
-            for(int j=0;j<arr.length;j++)
+            String input=s.nextLine().replaceAll("\\s", "");
+            String letters=input.replaceAll("\\d", "");
+            String numbers=input.replaceAll("\\D", "");
+
+            String direction="";
+
+            for(int j=0;j<letters.length();j++)
             {
-                if(j%2==0)
-                num[j/2]=Character.getNumericValue(arr[j]);
-                else
-                direction[(j-1)/2]=arr[j];
+                direction+=inLetters(numbers.charAt(j),letters.charAt(j));
             }
-            
-            
         }
-        
+
     }
+    
+    static String inletters(char x,char y)
+    {
+        String output="";
+        for(int i=0;i<Character.getNumericValue(x);i++)
+        {
+            output+=Character.toString(y);
+        }
+        return output;
+    }
+
+    
+
 }
