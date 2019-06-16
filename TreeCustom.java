@@ -1,5 +1,8 @@
 import java.util.*;
 public class TreeCustom 
+/**
+ * Binary tree Is a data structure where an object can be connected to 1 to 3 different objects. 
+   */
 {   
     TreeCustomNode root=null;
     static int w,h,hInc;
@@ -22,14 +25,14 @@ public class TreeCustom
         return yVal;
     }
     
-    public TreeCustom(int w,int h, int hInc)
+    public TreeCustom(int w,int h, int hInc)//Initiate
     {
         this.w=w;
         this.h=h;
         this.hInc=hInc;
     }
     
-    void insert(int data)
+    void insert(int data)//Inserts a node
     {
         root=insertNode(root,data);
     }
@@ -51,7 +54,7 @@ public class TreeCustom
         return root;
     }
     
-    void setCoordinates()
+    void setCoordinates()//For displaying nodes graphically
     {
         Coordinate(root,w,h);
     }

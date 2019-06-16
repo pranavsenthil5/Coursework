@@ -1,14 +1,15 @@
 import java.util.*;
 /**
- * This program represents a fraction in the form of sum of unit fractions
- * For example 5/6, can be return as 1/2 + 1/3
- * To achieve this, i take a highest unit fraction that is less than the input fraction
- * That becomes my first denominator.
- * Next, what i do is, i find the difference and store it and I find the highest UF of this number and add it to the list of denominators
- * I repeat until the difference is 0.
- * I print all the fractions using 1 as the numerator and the values in the list(Stored as a String)as the denominators
+ * Unit Fraction - represents a fraction in the form of sum of unit fractions
+ * For example 5/6, can be written as 1/2 + 1/3
+ * To achieve this, the highest unit fraction that is less than the input fraction is taken
+ * this becomes the first denominator.
+ * Next  the difference between the unit fraction and the input fraction is found and stored 
+ * the highest UF of the difference is found and added to the list of denominators
+ * The steps are repeates until the difference is 0.
+ * print all the fractions using 1 as the numerator and the values in the list(Stored in a String)as the denominators
  */
-class Fraction
+class UnitFraction
 {
     public static void main(String []args)
     {

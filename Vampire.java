@@ -1,6 +1,13 @@
 import java.util.*;
 class Vampire
 {
+ /**   
+    take the number as input
+    check if it has even
+    create a list of their factors
+    When multiplied they should give back the original number
+    and they should contain the same numbers as the original input
+    */
     public static void main(String []args)
     {
         Scanner s =new Scanner(System.in);
@@ -24,7 +31,7 @@ class Vampire
         }
     }
 
-    public static String sort(String s)
+    public static String sort(String s)//Sorting the String
     {       
         int x[]=new int[s.length()];
         for(int i=0;i<s.length();i++)

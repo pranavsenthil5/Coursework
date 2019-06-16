@@ -1,16 +1,17 @@
 import java.util.*;
 class Combinations
 /**Get input first.
- * This program outputs all poossible combinations and permutations of numbers in alphabetical order, for whom the sum of digits , is equal to the input.
+ * This program outputs all poossible combinations and permutations of numbers in alphabetical order, 
+ * for whom the sum of digits , is equal to the input.
  * For eample 6. 
  * OUTPUT-111111,11112,1113..and so on
  * 
  * Working:-
  * Maximum no, always has everything as one, For example 7-1111111,9-111111111
- * I iterate through a loop, starting from 1 to the maximum number.
- * I add the i to the array only if it's sum is the input number.
- * I then trim the arry
- * Then Sort
+ * Iterate through a loop, starting from 1 to the maximum number.
+ * Add the number to the array iff it's sum is the input number.
+ * Trim the arry
+ * Then sort it in alphabetical order
  * and then Print
  */
 {

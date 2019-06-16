@@ -1,6 +1,15 @@
 import java.util.*;
 class ShortestPath
 {
+    /**
+     * Finds the final direction of the destination, when given the steps in the form of u,d,l,r(Up , Down Left Right)
+     * Sample Input- 1 r 5 l 3 u 8 d
+     * 
+     * The relatiive directions are converted to universal directions using a few angles
+     * 
+     * After converting it to universal angles, the difference between up count and down count are taken and different of right and left count are
+     * olso take. Using the the final direction can be found
+       */
     public static void main(String []args)
     {
         Scanner s = new Scanner(System.in);
@@ -24,7 +33,7 @@ class ShortestPath
             
             String universalDirection="";
             
-            for(int k=0;k<direction.length();k++)
+            for(int k=0;k<direction.length();k++)//Converting it to universal direction
             {
                 char d=direction.charAt(k);
                 if(d=='l')

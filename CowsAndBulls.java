@@ -1,6 +1,23 @@
 import java.util.*;
 class CowsAndBulls
 {
+    /**
+     * Cows and Bulls is word game
+     * 
+     * The user has to guess a 'n'letter word entered initially as the input by the person conducting the game
+     * 
+     * If the user enters a word with a few letters in the same position,
+     * the program outputs the number of letters in the same place as Bulls
+     * If there are letters in the input, which consists of the same letters but at different position,
+     * the program outputs the number of same letters at different places as Cows
+     * 
+     * To find the number of bulls, iterate through the character of the initial word and the guessed word.
+     * check if they have the same letters, If they have increment a variable called count
+     * 
+     * To find the number of cows, remove the letters which contributed to the number of bulls.
+     * Sort the String and then iterate and see if the have the same letters
+     * Kepp count of the same letters.
+       */
     public static void main(String []args)
     {
         Scanner s = new Scanner(System.in);
@@ -21,21 +38,22 @@ class CowsAndBulls
             String input=s.next().toLowerCase();
             
             
-            if(input.equals("-1"))
+            if(input.equals("-1"))//To quit
             {
                 System.out.println("You Quit!");
                 System.out.println("The "+word.length()+" letter word is "+word+".");
             }
-            else if(input.length()!=word.length())
+            else if(input.length()!=word.length())//If the length does not match
             {
                 System.out.println("Wrong word length");
                 continue;
             }
             else if(!validInput(input))
             {
-                
+                System.out.println("Invalid Input!");
+                break;
             }
-            else if(input.equals(word))
+            else if(input.equals(word))//If its the correct word
             {
                 System.out.println("You guessed the word!");
                 break;
@@ -44,7 +62,7 @@ class CowsAndBulls
         }
     }
     
-    static boolean validInput(String input)
+    static boolean validInput(String input)//Checks if the input is valid-If it only has letters
     {
         for(int i=0;i<input.length();i++)
         {
@@ -57,7 +75,7 @@ class CowsAndBulls
     }
     
 
-    static void displayCount(String word,String input)
+    static void displayCount(String word,String input)//Displays the Bulls and Cows count
     {
         int count=0;
         String a="";
@@ -92,7 +110,7 @@ class CowsAndBulls
         System.out.println(count+" Cows");
     }
 
-    static String sort(String input)
+    static String sort(String input)//Sorts the String
     {
         char a[]=input.toCharArray();
         for(int i=0;i<input.length();i++)
@@ -116,22 +134,4 @@ class CowsAndBulls
         return output;
     }
 
-    /*
-    __________                                   
-    \______   \____________    ____ _____ ___  __
-    |     ___/\_  __ \__  \  /    \\__  \\  \/ /
-    |    |     |  | \// __ \|   |  \/ __ \\   / 
-    |____|     |__|  (____  /___|  (____  /\_/  
-    \/     \/     \/     
-
-    (                             
-    )\ )                          
-    (()/((      )          )  )    
-    /(_))(  ( /(  (    ( /( /((   
-    (_))(()\ )(_)) )\ ) )(_)|_))\  
-    | _ \((_|(_)_ _(_/(((_)__)((_) 
-    |  _/ '_/ _` | ' \)) _` \ V /  
-    |_| |_| \__,_|_||_|\__,_|\_/ 
-
-     */
 }

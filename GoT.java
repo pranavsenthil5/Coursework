@@ -2,13 +2,15 @@ import java.util.*;
 class GoT
 {
     /**
-     * Get the number of turns t
-     * get no of players..
-     * give one t turns to each player.
-     * Whoever it finishes with, kick them out(I make them -1)
-     * Then again,t turns for eack player. 
-     * Kick the last person out.
-     * After everytime u kick, check if the rest have gotten equal number of  turns. 
+     * Get the number of turns t as input
+     * get no of players as input
+     * give one turn to each player (t times).
+     * Whom ever the turn finishes with, Is out of the game(I make them -1)
+     * 
+     * Then start again,t turns for eack player. 
+     * Ending with the last person is out.
+     * 
+     * After everytime someone's out, check if the rest have gotten equal number of  turns. 
      * if yes break
      * if no repeat the process.
      */

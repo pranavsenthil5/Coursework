@@ -2,8 +2,11 @@ import java.util.*;
 class SieveofEratosthenes
 {
     /**
-     * Get input
-     * iterate through the array and remove the multiples of that number[I make it -1] 
+     * This is an algorithm to find the prime numbers in a specified range by the user 
+     * by removing multiples of numbers starting from 2 onwards
+     * Get input for max value
+     * iterate through the array(which has the numbers from 2 to the input value) 
+     * remove the multiples of input number[I make it -1] 
      * stop when the square of the number in the array is greater than the input
      * Display it
      */
@@ -15,14 +18,14 @@ class SieveofEratosthenes
         System.out.println("Input:");
         int n=s.nextInt();
         int a[]=new int[n-1];
-        for(int i=0;i<a.length;i++)
+        for(int i=0;i<a.length;i++)//Creates the array with all the numbers
         {
             a[i]=i+2;
         }
 
         for(int i=0;i<=n/2;i++)
         {
-            if(a[i]*a[i]>n)
+            if(a[i]*a[i]>n)//Breaks if the square of the array's element's value is greater than the input 
             break;
             for(int j=a[i];j<n;j+=a[i])
             {
@@ -30,7 +33,7 @@ class SieveofEratosthenes
                     break;
                 try
                 {
-                    a[j+i]=-1;
+                    a[j+i]=-1;//Making the multiple as -1
                 }
                 catch(Exception e)
                 {
@@ -43,7 +46,7 @@ class SieveofEratosthenes
         
     }
     
-    static void display(int x[])
+    static void display(int x[])//Displays a 1d array
     {
 
         for(int j=0;j<x.length;j++)

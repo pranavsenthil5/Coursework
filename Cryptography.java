@@ -1,6 +1,17 @@
 import java.util.*;
 class Cryptography
 {
+    /**
+     * Encrypt and Decrypt using Ceaser Cipher
+     * 
+     * Ceaser Cipher-Is a form of encryption where the letter are are shifted by certain number.
+     * For example If the shift number is 3,
+     * 'a' becomes 'e'
+     * but 'z' becomes 'd' (Cyclic)
+     * 
+     * Take Input from the user
+     * 
+       */
     public static void main(String []args)
     {
         Scanner s = new Scanner (System.in);
@@ -26,7 +37,7 @@ class Cryptography
             */
            input=input.split(" ").toString();//If this step does not work, switch it with the above one.
             String output="";
-            for(int i=0;i<input.length();i++)
+            for(int i=0;i<input.length();i++)//Decrypting and making it cylic
             {
                 //System.out.println(input.charAt(i));
                 int val1=((int)input.charAt(i));
@@ -37,17 +48,17 @@ class Cryptography
 
                 output=output+((char)val1);
             }
-            output=output.replace("QQ"," ");
-            output=output.trim();
+            output=output.replace("QQ"," ");//Replacing the QQ back to " "(Space)
+            output=output.trim();//Removing the space from the end
             System.out.println(output);
         }
         else if(option==1)
         {
-            input+=" ";
-            input=input.replace(" ","QQ");
+            input+=" ";//Adding a space in the end
+            input=input.replace(" ","QQ");//The spaces are taken as QQ
             
             String output="";
-            for(int i=0;i<input.length();i++)
+            for(int i=0;i<input.length();i++)//Encrypting using Ceaser Cipher
             {
                 //System.out.println(input.charAt(i));
                 int val1=((int)input.charAt(i));
@@ -63,7 +74,7 @@ class Cryptography
             for(int i=0;i<output.length();i++)
             {
                 if(i>5&&i%6==0)
-                System.out.print(" ");
+                System.out.print(" ");//After every 6 letters there is a space
                 System.out.print(output.charAt(i));
             }
         }

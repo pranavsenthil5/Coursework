@@ -1,8 +1,9 @@
 import java.util.*;
 class Frequency
 /**
- * Displays the unique frequency of a set of numbers
- * Store the uniqe numbers and their frequencies in two different arrays array
+ * Unique Frequency - Displays the unique frequency of a set of numbers
+ * 
+ * Store the uniqe numbers and their frequencies in two different arrays
  * Sort the arrays by ascending order of frequencies (5,6,6)
  * If there are more than 2 different values in the frequency array, Display invalid
  * Display the first or last element depending on whichever has a unique number in the frequency array (5)

@@ -1,9 +1,10 @@
 import java.util.*;
 class Bipartite
 /**
+ * Bipartite- Is a number that only has 2 unique numbers
  * Get input;
  * keep adding the input no. to itself
- * Check if the number is bipartite- Has only 2 unique numbers
+ * Check if the number is Bipartite
  * If yes display the 2 nos and their count before each.
  */
 {
@@ -15,14 +16,14 @@ class Bipartite
         double output = input;
         while (true)
         {
-            if(isBipartite(output))
+            if(isBipartite(output))//If the number is bipartite - display it
             {
                 display(output);
                 break;
             }
             else
             {
-                output+=input;
+                output+=input;//Adding the number to the initial input(Multiples of the initial input)
             }
         }
     }
@@ -57,7 +58,7 @@ class Bipartite
         return count;
     }
 
-    static boolean isBipartite(double s)
+    static boolean isBipartite(double s)//Checks if a number is bipartite (if the number has only t unique digits)
     {
         String n=""+s;
         n=n.substring(0,n.length()-2);

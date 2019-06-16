@@ -1,5 +1,9 @@
 public class LinkedListCustomMain
 {
+    /**
+     * Linked List is a data structure where objects are connected to each other.In our case it can be connected to 1 or 2 other objects
+       
+       */
     public static void main(String args[])
     {
         LinkedListCustom list=new LinkedListCustom();

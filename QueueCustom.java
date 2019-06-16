@@ -1,16 +1,19 @@
 class QueueCustom
+/**
+ * Queue is a Data structure that uses the principle of First In First Out. 
+   */
 {
     int front;
     int rear;
     int arr[];
-    QueueCustom(int x)
+    QueueCustom(int x)//Initializing the variables
     {
         front=0;
         rear=0;
         arr= new int [x];
     }
     
-    void enqueue(int input)
+    void enqueue(int input)//Adding a value to the queue
     {
         if(rear==arr.length)
         {
@@ -22,7 +25,7 @@ class QueueCustom
         }
     }
     
-    int dequeue()
+    int dequeue()//removing the last value from the queue list
     {
         if(rear==front)
         {

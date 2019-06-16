@@ -3,7 +3,7 @@ class LinkedListCustom
 {
 	LinkedListCustomNode first, last;
 	LinkedListCustomNode first1, last1;
-    void insert(int x)
+    void insert(int x)//Inserting the node at the right place, the nodes should be sorted
     {
     	LinkedListCustomNode nptr=new LinkedListCustomNode(x);
         boolean done = false;
@@ -54,7 +54,7 @@ class LinkedListCustom
         }
     }
 
-    void display() {
+    void display() {//Displays the nodes
     	LinkedListCustomNode curr= first;
         while (curr!= null) {
             System.out.println(curr.data);
@@ -63,7 +63,7 @@ class LinkedListCustom
         //System.out.println(curr.data);
     }
 
-    void delete(int x)
+    void delete(int x)//Deletes a node by value
     {
         if(first==null)
             return;
@@ -125,7 +125,7 @@ class LinkedListCustom
         }
     }
 
-    void reverseData()
+    void reverseData()//Reverses the linked list
     {
         String temp="";
         if(first==null)

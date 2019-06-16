@@ -1,6 +1,20 @@
 import java.util.*;
 class DateFinder
 {
+    /**
+     * Get a date as the input from the user
+     * Get the difference too
+     * 
+     * 
+     * increment date by 1 and decrement difference by 1
+     * if difference becomes 0, stop
+     * when incrementing stat with the actual date in the month
+     * add 1, if it excceds the no of days possible in that month, increment months, if months exceed 12,increment year
+     * 
+     * Do all date checks (If its valid or not)
+     * 
+     * To calculate the days, Zeller's formula was used.
+       */
     public static void main(String []args)
     {
         Scanner s = new Scanner(System.in);
@@ -21,7 +35,7 @@ class DateFinder
             numDays[1]=29;
         }
 
-        try
+        try//Checks for the validity of the date
         {
             if(date <=numDays[month-1] && date>0)
             {
@@ -53,7 +67,7 @@ class DateFinder
         
         
 
-        for(;diff>0;diff--)
+        for(;diff>0;diff--)//algorithm is implemented here
         {
             date++;
             if(isLeapYear(year))
@@ -76,7 +90,7 @@ class DateFinder
         
     }
 
-    static boolean isLeapYear(int year)
+    static boolean isLeapYear(int year)//Checks if a year is a leap year
     {
         if(year%100==0)
 
@@ -93,7 +107,7 @@ class DateFinder
         return false;
     }
     
-    static String getDay(int date,int month,int year)
+    static String getDay(int date,int month,int year)//Finds the day of the date using zeller's formula
     {
         
         int m=(month+10)%12;

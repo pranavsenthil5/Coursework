@@ -1,6 +1,15 @@
 import java.util.*;
 class InfixToPostfix
 {
+    /**
+     * Postfix is a form of writing mathematical expressions
+     * 
+     * The operator comes after the operands
+     * For example if the expression is a+b(Infix form- where the operator is in the middle of 2 operands)
+     * the postfix form would become- 'ab+'
+     * 
+     * This is achved by using stacks
+       */
     public static void main(String []args)
     {
         Scanner s = new Scanner(System.in);
@@ -14,11 +23,11 @@ class InfixToPostfix
         for(int i=0;i<input.length();i++)
         {
             char c=input.charAt(i);
-            if(c=='(')
+            if(c=='(')//Just push
             {
                 stack.push('(');
             }
-            else if(c==')')
+            else if(c==')')//Pop until the other pair comes out
             {
 
                 while(true)
@@ -41,15 +50,15 @@ class InfixToPostfix
             }
             else if(isOperator(c))
             {
-                if(stack.isEmpty())
+                if(stack.isEmpty())//If its empty just push
                 {
                     stack.push(c);
                 }
-                else if(priority(c)>priority(stack.peek()))
+                else if(priority(c)>priority(stack.peek()))//Just push
                 {
                     stack.push(c);
                 }
-                else if(priority(c)==priority(stack.peek()))
+                else if(priority(c)==priority(stack.peek()))//If its equal, pop and then push
                 {
                     char temp=stack.pop();
                     output+=temp;
@@ -68,7 +77,7 @@ class InfixToPostfix
             //displayArray(stack.arr);
         }
         
-        while(!stack.isEmpty())
+        while(!stack.isEmpty())//Emptying out of the stack
         {
             output+=stack.pop();
         }
@@ -76,7 +85,7 @@ class InfixToPostfix
         //System.out.println(output);
         display(output);
     }
-    static boolean isOperator(char c)
+    static boolean isOperator(char c)//checks if iits an operator
     {
         switch (c)
         {
@@ -89,7 +98,7 @@ class InfixToPostfix
         }
         return false;
     }
-    static int priority(char c)
+    static int priority(char c)//returns the priority fo rthe symbols
     {
         switch (c)
         {

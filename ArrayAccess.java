@@ -2,15 +2,15 @@ import java.util.*;
 class ArrayAccess
 {
     /**
-     * Has all sorts and searches
+     * Has all sorts and searches(They are listed below with their respective algorithms)
      */
     public static void main(String []args)
     {
         Scanner s = new Scanner(System.in);
         System.out.println("Input the no. of elements in the array");
-        
+
         int []array=new int[s.nextInt()];
-        
+
         for(int i=0;i<array.length;i++)
         {
             System.out.println("Enter value of element "+i+":");
@@ -73,6 +73,10 @@ class ArrayAccess
         }
     }
 
+    /** 
+     * Iterate through the array 
+     * swap numbers if the array's current elment is greater than the next elemnt
+     */
     public static int[] Bubble(int []x)
     {
         for(int i=0;i<x.length;i++)
@@ -90,6 +94,11 @@ class ArrayAccess
         return x;
     }
 
+    /**
+     * Iterate through the array and swap the lowest number with the first position
+     * Find the next smallest element and swap it with the 2nd
+     * Keep swaping until the last element has been reached
+     */
     public static int[] Selection(int []x)
     {
         for (int i = 0; i < x.length-1; i++) 
@@ -109,6 +118,10 @@ class ArrayAccess
         return x;
     }
 
+    /**
+     * Iterate through the array 
+     * check if the value is less than that of the starting element and insert it in that position.
+    */
     public static int[] Insertion(int []x)
     {
         int i, key, j; 
@@ -127,6 +140,9 @@ class ArrayAccess
         return x;
     }
 
+    /**
+     * Iterate through the array in loop and search for the element
+     */
     public static boolean Linear(int []x,int y)
     {
         for(int i=0;i<x.length;i++)
@@ -136,7 +152,17 @@ class ArrayAccess
         }
         return false;
     }
-
+    
+     /**
+     * Sort the array
+     * Find the middle element
+     * If the value which is being searched for is greater than the middle one, 
+     * the lower bound's value becomes the middle elements position +1
+     * if no, upper bounds value becomes 1 less than the middle elements value
+     * if the middle element's vlueis equal to the value,return true
+     * if the lower bound has the same value or greater than the upper bound exit the loop
+     * return false
+     */
     public static boolean Binary(int []x,int y)
     {
         x=Bubble(x);
