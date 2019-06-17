@@ -14,11 +14,12 @@ class PrimeProduct
                 if(isPrime(j))
                 {
                     
-                    if((i/j)%1==0)
+                    if(i%j==0)
                     {
                         if(isPrime(i/j))
                         {
-                            System.out.println(i+"-"+j+"X"+(i/j));
+                            //
+                            System.out.println(i);
                             continue outer;
                         }
                     }
@@ -28,7 +29,7 @@ class PrimeProduct
     }
     public static boolean isPrime(int x)
     {
-        for(int i=2;i<x/2-1;i++)
+        for(int i=2;i<x;i++)
         {
             if(x%i==0)
             {
